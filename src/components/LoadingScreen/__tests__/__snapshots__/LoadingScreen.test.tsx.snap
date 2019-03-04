@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `
+exports[`<LoadingScreen /> renders 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__unrendered__): <LoadingScreen />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -16,21 +16,25 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
-    "props": Object {},
+    "nodeType": "host",
+    "props": Object {
+      "children": "LoadingScreen",
+    },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
+    "rendered": "LoadingScreen",
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
-      "props": Object {},
+      "nodeType": "host",
+      "props": Object {
+        "children": "LoadingScreen",
+      },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": "LoadingScreen",
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
