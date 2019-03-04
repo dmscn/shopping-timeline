@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Grommet } from "grommet";
 
 import MainScreen from "./components/MainScreen";
 import LoadingScreen from "./components/LoadingScreen";
@@ -19,11 +20,11 @@ class App extends Component<any, State> {
     data: undefined
   };
 
-  componentDidMount() {
+  componentDidMount(): void {
     this.fetchPurchases();
   }
 
-  fetchPurchases = async () => {
+  fetchPurchases = async (): Promise<any> => {
     try {
       const { data } = await axios.get(API_URL);
       console.log(data);
@@ -33,12 +34,19 @@ class App extends Component<any, State> {
     }
   };
 
-  render() {
+  render(): JSX.Element {
     const { loading, error, data } = this.state;
-
-    if (loading) return <LoadingScreen />;
-    if (data) return <MainScreen data={data} />;
-    return <ErrorScreen error={error} />;
+    return (
+      <Grommet plain>
+        {loading ? (
+          <LoadingScreen />
+        ) : data ? (
+          <MainScreen data={data} />
+        ) : (
+          <ErrorScreen error={error} />
+        )}
+      </Grommet>
+    );
   }
 }
 
