@@ -1,8 +1,20 @@
 import React, { Component } from "react";
-import styles from "./PurchaseBox.module.css";
+import { Box } from "grommet";
 
-export default class PurchaseBox extends Component {
+export interface Props {
+  products: any;
+}
+
+export default class PurchaseBox extends Component<Props> {
   render() {
-    return <div>PurchaseBox</div>;
+    const { products } = this.props;
+    return (
+      <Box
+        width="30vw"
+        height="30vh"
+        margin={{ top: "large", left: "-1.5em" }}
+        background={{ color: "#0000FF", opacity: "medium" }}
+      />
+    );
   }
 }

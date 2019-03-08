@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Box } from "grommet";
+import PurchaseBox from "./PurchaseBox";
 
 export interface Props {
   data?: any;
@@ -10,18 +11,23 @@ export default class MainScreen extends Component<Props> {
     const { data } = this.props;
     return (
       <Box
+        style={{ minHeight: "100vh" }}
         align="center"
-        height="100vh"
         direction="row"
-        background={{ color: "#DDDFFF", opacity: "strong" }}
+        pad={{ vertical: "large" }}
+        background={{ color: "#DDDFFF", opacity: "medium" }}
       >
         <Box
-          id="timeline"
-          alignSelf="start"
           margin={{ horizontal: "xlarge" }}
-          background={{ color: "#cecece" }}
-        />
-        <Box height="10vh" width="10vw" background={{ color: "blue" }} />
+          pad={{ bottom: "large" }}
+          justify="start"
+          border={{ side: "left", color: "#cecece", size: "small" }}
+        >
+          <PurchaseBox products={[]} />
+          <PurchaseBox products={[]} />
+          <PurchaseBox products={[]} />
+          <PurchaseBox products={[]} />
+        </Box>
       </Box>
     );
   }
