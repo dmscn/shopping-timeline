@@ -16,7 +16,9 @@ export default class PurchaseBox extends Component<Props> {
         direction="row"
         margin={{ top: "large", left: "-1em" }}
       >
+        {/* CheckBox Circle */}
         <Box
+          id="CheckboxCircle"
           style={{ position: "absolute" }}
           width="2em"
           height="2em"
@@ -29,6 +31,8 @@ export default class PurchaseBox extends Component<Props> {
         >
           <Checkmark color="#00C781" size="1em" />
         </Box>
+
+        {/* Arrow */}
         <Box
           id="arrow"
           style={{ transform: "rotate(45deg)", zIndex: 2 }}
@@ -37,7 +41,10 @@ export default class PurchaseBox extends Component<Props> {
           margin={{ left: "large", top: "medium", right: "-.5em" }}
           background={{ color: "white" }}
         />
+
+        {/* ContentBox */}
         <Box
+          id="ContentBox"
           fill="horizontal"
           round="small"
           elevation="large"

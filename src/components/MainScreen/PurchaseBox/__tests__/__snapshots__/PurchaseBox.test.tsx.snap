@@ -35,6 +35,7 @@ ShallowWrapper {
           }
           direction="column"
           height="2em"
+          id="CheckboxCircle"
           justify="center"
           margin={
             Object {
@@ -1829,6 +1830,7 @@ ShallowWrapper {
           direction="column"
           elevation="large"
           fill="horizontal"
+          id="ContentBox"
           margin="none"
           pad="none"
           responsive={true}
@@ -3603,6 +3605,7 @@ ShallowWrapper {
           />,
           "direction": "column",
           "height": "2em",
+          "id": "CheckboxCircle",
           "justify": "center",
           "margin": Object {
             "top": "small",
@@ -6449,6 +6452,7 @@ string",
           "direction": "column",
           "elevation": "large",
           "fill": "horizontal",
+          "id": "ContentBox",
           "margin": "none",
           "pad": "none",
           "responsive": true,
@@ -8397,6 +8401,7 @@ string",
             }
             direction="column"
             height="2em"
+            id="CheckboxCircle"
             justify="center"
             margin={
               Object {
@@ -10191,6 +10196,7 @@ string",
             direction="column"
             elevation="large"
             fill="horizontal"
+            id="ContentBox"
             margin="none"
             pad="none"
             responsive={true}
@@ -11965,6 +11971,7 @@ string",
             />,
             "direction": "column",
             "height": "2em",
+            "id": "CheckboxCircle",
             "justify": "center",
             "margin": Object {
               "top": "small",
@@ -14811,6 +14818,7 @@ string",
             "direction": "column",
             "elevation": "large",
             "fill": "horizontal",
+            "id": "ContentBox",
             "margin": "none",
             "pad": "none",
             "responsive": true,
