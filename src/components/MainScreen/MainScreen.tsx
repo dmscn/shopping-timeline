@@ -23,10 +23,10 @@ export default class MainScreen extends Component<Props> {
           justify="start"
           border={{ side: "left", color: "#cecece", size: "small" }}
         >
-          <PurchaseBox products={[]} />
-          <PurchaseBox products={[]} />
-          <PurchaseBox products={[]} />
-          <PurchaseBox products={[]} />
+          <PurchaseBox data={[]} />
+          <PurchaseBox data={[]} />
+          <PurchaseBox data={[]} />
+          <PurchaseBox data={[]} />
         </Box>
       </Box>
     );
