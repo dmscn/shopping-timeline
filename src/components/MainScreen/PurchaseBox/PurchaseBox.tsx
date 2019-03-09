@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import { Box, Text } from "grommet";
 import { Checkmark, Plan, Clock, Location, Money } from "grommet-icons";
 import moment from "moment";
+import "moment/min/locales";
 
-moment.locale("pt-BR");
+import ProductsList from "./ProductList";
+
+moment.locale("pt-br");
 
 export interface Props {
   data: any;
@@ -26,7 +29,7 @@ export default function PurchaseBox(props: Props): JSX.Element {
         width="2em"
         height="2em"
         round="full"
-        justify="center"
+        justify="between"
         align="center"
         margin={{ top: "small" }}
         border={{ side: "all", color: "#CECECE", size: "small" }}
@@ -72,11 +75,13 @@ export default function PurchaseBox(props: Props): JSX.Element {
           <Text>{moment(data.timestamp).format("LT")}</Text>
 
           <Location color="#cecece" size="1.5em" />
-          <Text>{data}</Text>
+          <Text>{data.store_name}</Text>
 
           <Money color="#cecece" size="1.5em" />
-          <Text>{moment(data.timestamp).format("LT")}</Text>
+          <Text>{data.total_value}</Text>
         </Box>
+
+        <ProductsList products={products} />
       </Box>
     </Box>
   );
