@@ -1,25 +1,52 @@
 import React, { Component } from "react";
 
+import PurchaseBox from "./PurchaseBox";
+
 export interface Props {
-  data: any;
+  data: Array<any>;
 }
 
 export default class PurchaseList extends Component<Props> {
-  formatData = (data: any): any => {
-    const purchases = data.filter((item: any) => item.event === "comprou");
-    const products = data.filter(
+  formatData = (data: any): Array<any> => {
+    const { events } = data;
+
+    const purchases = events
+      .filter((item: any) => item.event === "comprou")
+      .map((purchase: any) => {
+        const transactionId: string = purchase.custom_data.find(
+          (item: any) => item.key === "transaction_id"
+        ).value;
+        return {
+          ...purchase,
+          transaction_id: transactionId
+        };
+      });
+
+    const products = events.filter(
       (item: any) => item.event === "comprou-produto"
     );
-    let result;
-    products.reduce(result, (product: any) => {
-      purchases.includes();
-    });
+    console.log("Products ", products);
 
-    console.log("result after reduce", result);
-    return result;
+    let result = products.reduce((acc: Array<any>, product: any) => {
+      const transactionId: string = product.custom_data.find(
+        (item: any) => item.key === "transaction_id"
+      ).value;
+      console.log("Transaction id product =>", transactionId);
+      const purchaseIndex = acc.findIndex(
+        (purchase: any) => purchase.transaction_id === transactionId
+      );
+      console.log("Purchase Index => ", purchaseIndex);
+    }, purchases);
+
+    // console.log("result after reduce", result);
+    // return result;
+    return [];
   };
 
-  render() {
-    return <div />;
+  render(): JSX.Element {
+    const { data } = this.props;
+    const formatedData = this.formatData(data);
+    // return this.formatData(data).map((purchase: any) => (<PurchaseBox data={[]}/>));
+    return <PurchaseBox data={[]} />;
   }
 }
