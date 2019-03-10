@@ -5,6 +5,8 @@ import moment from "moment";
 import "moment/min/locales";
 
 import ProductsList from "./ProductList";
+import CheckmarkCircle from "./CheckmarkCircle";
+import BoxArrow from "./BoxArrow/BoxArrow";
 
 moment.locale("pt-br");
 
@@ -22,31 +24,8 @@ export default function PurchaseBox(props: Props): JSX.Element {
       direction="row"
       margin={{ top: "large", left: "-1em" }}
     >
-      {/* CheckBox Circle */}
-      <Box
-        id="CheckboxCircle"
-        style={{ position: "absolute" }}
-        width="2em"
-        height="2em"
-        round="full"
-        justify="between"
-        align="center"
-        margin={{ top: "small" }}
-        border={{ side: "all", color: "#CECECE", size: "small" }}
-        background={{ color: "white" }}
-      >
-        <Checkmark color="#00C781" size="1em" />
-      </Box>
-
-      {/* Arrow */}
-      <Box
-        id="arrow"
-        style={{ transform: "rotate(45deg)", zIndex: 2 }}
-        width="1em"
-        height="1em"
-        margin={{ left: "large", top: "medium", right: "-.5em" }}
-        background={{ color: "white" }}
-      />
+      <CheckmarkCircle />
+      <BoxArrow />
 
       {/* ContentBox */}
       <Box
@@ -65,22 +44,31 @@ export default function PurchaseBox(props: Props): JSX.Element {
           height="4em"
           direction="row"
           pad="medium"
+          justify="between"
           align="center"
           background={{ color: "white" }}
         >
-          <Plan color="#cecece" size="1.5em" />
-          <Text>{moment(data.timestamp).format("DD/MM/YYYY")}</Text>
+          <Box direction="row">
+            <Plan color="#cecece" size="1.5em" />
+            <Text>{moment(data.timestamp).format("DD/MM/YYYY")}</Text>
+          </Box>
 
-          <Clock color="#cecece" size="1.5em" />
-          <Text>{moment(data.timestamp).format("LT")}</Text>
+          <Box direction="row">
+            <Clock color="#cecece" size="1.5em" />
+            <Text>{moment(data.timestamp).format("LT")}</Text>
+          </Box>
 
-          <Location color="#cecece" size="1.5em" />
-          <Text>{data.store_name}</Text>
-
-          <Money color="#cecece" size="1.5em" />
-          <Text>{data.total_value}</Text>
+          <Box direction="row">
+            <Location color="#cecece" size="1.5em" />
+            <Text>{data.store_name}</Text>
+          </Box>
+          <Box direction="row">
+            <Money color="#cecece" size="1.5em" />
+            <Text>{data.total_value}</Text>
+          </Box>
         </Box>
 
+        {/* Products */}
         <ProductsList products={products} />
       </Box>
     </Box>
