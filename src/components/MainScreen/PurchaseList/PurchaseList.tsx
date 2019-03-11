@@ -22,25 +22,31 @@ export default class PurchaseList extends Component<Props> {
         };
       });
 
-    const products = events.filter(
-      (item: any) => item.event === "comprou-produto"
-    );
-    console.log("Products ", products);
+    const products = events
+      .filter((item: any) => item.event === "comprou-produto")
+      .map((product: any) => {
+        const transactionId: string = product.custom_data.find(
+          (item: any) => item.key === "transaction_id"
+        ).value;
+        return {
+          ...product,
+          transaction_id: transactionId
+        };
+      });
 
-    let result = products.reduce((acc: Array<any>, product: any) => {
-      const transactionId: string = product.custom_data.find(
-        (item: any) => item.key === "transaction_id"
-      ).value;
-      console.log("Transaction id product =>", transactionId);
-      const purchaseIndex = acc.findIndex(
-        (purchase: any) => purchase.transaction_id === transactionId
+    let result = purchases.reduce((acc: Array<any>, purchase: any) => {
+      const purchaseProducts: Array<any> = products.filter(
+        (product: any) => product.transaction_id === purchase.transaction_id
       );
-      console.log("Purchase Index => ", purchaseIndex);
-    }, purchases);
+      purchase = {
+        ...purchase,
+        products: purchaseProducts
+      };
+      return acc.concat(purchase);
+    }, []);
 
-    // console.log("result after reduce", result);
-    // return result;
-    return [];
+    console.log("result after reduce", result);
+    return result;
   };
 
   render(): JSX.Element {
