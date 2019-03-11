@@ -27,7 +27,6 @@ class App extends Component<any, State> {
   fetchPurchases = async (): Promise<any> => {
     try {
       const { data } = await axios.get(API_URL);
-      console.log(data);
       this.setState({ data, loading: false });
     } catch (err) {
       this.setState({ error: err });

@@ -11,12 +11,12 @@ import BoxArrow from "./BoxArrow/BoxArrow";
 moment.locale("pt-br");
 
 export interface Props {
-  data: any;
+  purchase: any;
 }
 
 export default function PurchaseBox(props: Props): JSX.Element {
-  const { data } = props;
-  const { products } = data;
+  const { purchase } = props;
+  const { products } = purchase;
   return (
     <Box
       width="30vw"
@@ -50,21 +50,21 @@ export default function PurchaseBox(props: Props): JSX.Element {
         >
           <Box direction="row">
             <Plan color="#cecece" size="1.5em" />
-            <Text>{moment(data.timestamp).format("DD/MM/YYYY")}</Text>
+            <Text>{moment(purchase.timestamp).format("DD/MM/YYYY")}</Text>
           </Box>
 
           <Box direction="row">
             <Clock color="#cecece" size="1.5em" />
-            <Text>{moment(data.timestamp).format("LT")}</Text>
+            <Text>{moment(purchase.timestamp).format("LT")}</Text>
           </Box>
 
           <Box direction="row">
             <Location color="#cecece" size="1.5em" />
-            <Text>{data.store_name}</Text>
+            <Text>{purchase.store_name}</Text>
           </Box>
           <Box direction="row">
             <Money color="#cecece" size="1.5em" />
-            <Text>{data.total_value}</Text>
+            <Text>{purchase.total_value}</Text>
           </Box>
         </Box>
 

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import PurchaseBox from "./PurchaseBox";
 
 export interface Props {
-  data: Array<any>;
+  data: any;
 }
 
 export default class PurchaseList extends Component<Props> {
@@ -45,14 +45,14 @@ export default class PurchaseList extends Component<Props> {
       return acc.concat(purchase);
     }, []);
 
-    console.log("result after reduce", result);
     return result;
   };
 
-  render(): JSX.Element {
+  render() {
     const { data } = this.props;
-    const formatedData = this.formatData(data);
-    // return this.formatData(data).map((purchase: any) => (<PurchaseBox data={[]}/>));
-    return <PurchaseBox data={[]} />;
+    const formatedData: Array<any> = this.formatData(data);
+    return formatedData.map((purchase: any) => (
+      <PurchaseBox purchase={purchase} />
+    ));
   }
 }
