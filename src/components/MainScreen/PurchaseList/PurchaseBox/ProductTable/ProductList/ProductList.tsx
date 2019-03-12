@@ -5,8 +5,8 @@ export interface Props {
   products: Array<any>;
 }
 
-export default function ProductList(props: Props): Array<JSX.Element> {
-  return props.products.map((product: any) => {
+export default function ProductList(props: Props): any {
+  const result: Array<JSX.Element> = props.products.map((product: any) => {
     const { value: productName } = product.custom_data.find(
       (item: any) => item.key === "product_name"
     );
@@ -21,4 +21,5 @@ export default function ProductList(props: Props): Array<JSX.Element> {
       </TableRow>
     );
   });
+  return result;
 }

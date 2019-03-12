@@ -3,7 +3,9 @@
 exports[`<ProductList /> renders 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ProductList />,
+  Symbol(enzyme.__unrendered__): <ProductTable
+    products={Array []}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -18,276 +20,42 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": <TableHeader>
-        <TableRow>
-          <ForwardRef
-            border="bottom"
-            scope="col"
-          >
-            <strong>
-              Nome
-            </strong>
-          </ForwardRef>
-          <ForwardRef
-            border="bottom"
-            scope="col"
-          >
-            <strong>
-              Preço
-            </strong>
-          </ForwardRef>
-        </TableRow>
-      </TableHeader>,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": <TableRow>
-          <ForwardRef
-            border="bottom"
-            scope="col"
-          >
-            <strong>
-              Nome
-            </strong>
-          </ForwardRef>
-          <ForwardRef
-            border="bottom"
-            scope="col"
-          >
-            <strong>
-              Preço
-            </strong>
-          </ForwardRef>
-        </TableRow>,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "children": Array [
-            <ForwardRef
-              border="bottom"
-              scope="col"
-            >
-              <strong>
-                Nome
-              </strong>
-            </ForwardRef>,
-            <ForwardRef
-              border="bottom"
-              scope="col"
-            >
-              <strong>
-                Preço
-              </strong>
-            </ForwardRef>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "border": "bottom",
-              "children": <strong>
-                Nome
-              </strong>,
-              "scope": "col",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Nome",
-              },
-              "ref": null,
-              "rendered": "Nome",
-              "type": "strong",
-            },
-            "type": Object {
-              "description": "A cell of data in a table.",
-              "intrinsicElement": "td",
-              "name": "TableCell",
-              "properties": Array [
-                Object {
-                  "defaultValue": false,
-                  "description": "Whether default styling context should be removed.",
-                  "format": "boolean",
-                  "name": "plain",
-                },
-                Object {
-                  "description": "For header cells, what scope the header is for.
-        Typically, the cells in a TableHeader have 'col' scope and
-        the primary cell in each row in the TableBody has 'row' scope.",
-                  "format": "col
-row",
-                  "name": "scope",
-                },
-                Object {
-                  "description": "What size the cell should be. Typically, this is not needed
-      unless you are trying to align multiple tables.",
-                  "format": "xxsmall
-xsmall
-small
-medium
-large
-xlarge
-1/2
-1/3
-2/3
-1/4
-2/4
-3/4
-string",
-                  "name": "size",
-                },
-                Object {
-                  "description": "How to align the contents vertically.",
-                  "format": "top
-middle
-bottom",
-                  "name": "verticalAlign",
-                },
-              ],
-              "usage": "import { TableCell } from 'grommet';
-<TableCell />",
-            },
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "border": "bottom",
-              "children": <strong>
-                Preço
-              </strong>,
-              "scope": "col",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Preço",
-              },
-              "ref": null,
-              "rendered": "Preço",
-              "type": "strong",
-            },
-            "type": Object {
-              "description": "A cell of data in a table.",
-              "intrinsicElement": "td",
-              "name": "TableCell",
-              "properties": Array [
-                Object {
-                  "defaultValue": false,
-                  "description": "Whether default styling context should be removed.",
-                  "format": "boolean",
-                  "name": "plain",
-                },
-                Object {
-                  "description": "For header cells, what scope the header is for.
-        Typically, the cells in a TableHeader have 'col' scope and
-        the primary cell in each row in the TableBody has 'row' scope.",
-                  "format": "col
-row",
-                  "name": "scope",
-                },
-                Object {
-                  "description": "What size the cell should be. Typically, this is not needed
-      unless you are trying to align multiple tables.",
-                  "format": "xxsmall
-xsmall
-small
-medium
-large
-xlarge
-1/2
-1/3
-2/3
-1/4
-2/4
-3/4
-string",
-                  "name": "size",
-                },
-                Object {
-                  "description": "How to align the contents vertically.",
-                  "format": "top
-middle
-bottom",
-                  "name": "verticalAlign",
-                },
-              ],
-              "usage": "import { TableCell } from 'grommet';
-<TableCell />",
-            },
-          },
-        ],
-        "type": [Function],
-      },
-      "type": [Function],
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": <TableHeader>
+      "children": Array [
+        <TableHeader>
           <TableRow>
-            <ForwardRef
-              border="bottom"
-              scope="col"
-            >
+            <ForwardRef>
               <strong>
                 Nome
               </strong>
             </ForwardRef>
-            <ForwardRef
-              border="bottom"
-              scope="col"
-            >
+            <ForwardRef>
               <strong>
                 Preço
               </strong>
             </ForwardRef>
           </TableRow>
         </TableHeader>,
-      },
-      "ref": null,
-      "rendered": Object {
+        <TableBody>
+          <ProductList
+            products={Array []}
+          />
+        </TableBody>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
         "props": Object {
           "children": <TableRow>
-            <ForwardRef
-              border="bottom"
-              scope="col"
-            >
+            <ForwardRef>
               <strong>
                 Nome
               </strong>
             </ForwardRef>
-            <ForwardRef
-              border="bottom"
-              scope="col"
-            >
+            <ForwardRef>
               <strong>
                 Preço
               </strong>
@@ -301,18 +69,12 @@ bottom",
           "nodeType": "function",
           "props": Object {
             "children": Array [
-              <ForwardRef
-                border="bottom"
-                scope="col"
-              >
+              <ForwardRef>
                 <strong>
                   Nome
                 </strong>
               </ForwardRef>,
-              <ForwardRef
-                border="bottom"
-                scope="col"
-              >
+              <ForwardRef>
                 <strong>
                   Preço
                 </strong>
@@ -326,11 +88,9 @@ bottom",
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "border": "bottom",
                 "children": <strong>
                   Nome
                 </strong>,
-                "scope": "col",
               },
               "ref": null,
               "rendered": Object {
@@ -398,11 +158,9 @@ bottom",
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "border": "bottom",
                 "children": <strong>
                   Preço
                 </strong>,
-                "scope": "col",
               },
               "ref": null,
               "rendered": Object {
@@ -470,6 +228,270 @@ bottom",
         },
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <ProductList
+            products={Array []}
+          />,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "products": Array [],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <TableHeader>
+            <TableRow>
+              <ForwardRef>
+                <strong>
+                  Nome
+                </strong>
+              </ForwardRef>
+              <ForwardRef>
+                <strong>
+                  Preço
+                </strong>
+              </ForwardRef>
+            </TableRow>
+          </TableHeader>,
+          <TableBody>
+            <ProductList
+              products={Array []}
+            />
+          </TableBody>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <TableRow>
+              <ForwardRef>
+                <strong>
+                  Nome
+                </strong>
+              </ForwardRef>
+              <ForwardRef>
+                <strong>
+                  Preço
+                </strong>
+              </ForwardRef>
+            </TableRow>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <ForwardRef>
+                  <strong>
+                    Nome
+                  </strong>
+                </ForwardRef>,
+                <ForwardRef>
+                  <strong>
+                    Preço
+                  </strong>
+                </ForwardRef>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": <strong>
+                    Nome
+                  </strong>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Nome",
+                  },
+                  "ref": null,
+                  "rendered": "Nome",
+                  "type": "strong",
+                },
+                "type": Object {
+                  "description": "A cell of data in a table.",
+                  "intrinsicElement": "td",
+                  "name": "TableCell",
+                  "properties": Array [
+                    Object {
+                      "defaultValue": false,
+                      "description": "Whether default styling context should be removed.",
+                      "format": "boolean",
+                      "name": "plain",
+                    },
+                    Object {
+                      "description": "For header cells, what scope the header is for.
+        Typically, the cells in a TableHeader have 'col' scope and
+        the primary cell in each row in the TableBody has 'row' scope.",
+                      "format": "col
+row",
+                      "name": "scope",
+                    },
+                    Object {
+                      "description": "What size the cell should be. Typically, this is not needed
+      unless you are trying to align multiple tables.",
+                      "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+string",
+                      "name": "size",
+                    },
+                    Object {
+                      "description": "How to align the contents vertically.",
+                      "format": "top
+middle
+bottom",
+                      "name": "verticalAlign",
+                    },
+                  ],
+                  "usage": "import { TableCell } from 'grommet';
+<TableCell />",
+                },
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": <strong>
+                    Preço
+                  </strong>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Preço",
+                  },
+                  "ref": null,
+                  "rendered": "Preço",
+                  "type": "strong",
+                },
+                "type": Object {
+                  "description": "A cell of data in a table.",
+                  "intrinsicElement": "td",
+                  "name": "TableCell",
+                  "properties": Array [
+                    Object {
+                      "defaultValue": false,
+                      "description": "Whether default styling context should be removed.",
+                      "format": "boolean",
+                      "name": "plain",
+                    },
+                    Object {
+                      "description": "For header cells, what scope the header is for.
+        Typically, the cells in a TableHeader have 'col' scope and
+        the primary cell in each row in the TableBody has 'row' scope.",
+                      "format": "col
+row",
+                      "name": "scope",
+                    },
+                    Object {
+                      "description": "What size the cell should be. Typically, this is not needed
+      unless you are trying to align multiple tables.",
+                      "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+string",
+                      "name": "size",
+                    },
+                    Object {
+                      "description": "How to align the contents vertically.",
+                      "format": "top
+middle
+bottom",
+                      "name": "verticalAlign",
+                    },
+                  ],
+                  "usage": "import { TableCell } from 'grommet';
+<TableCell />",
+                },
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <ProductList
+              products={Array []}
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "products": Array [],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
       "type": [Function],
     },
   ],

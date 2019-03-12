@@ -20,8 +20,7 @@ export default function PurchaseBox(props: Props): JSX.Element {
   console.log("Products", products);
   return (
     <Box
-      width="30vw"
-      height="30vh"
+      style={{ minHeight: "30vh", minWidth: "30vw" }}
       direction="row"
       margin={{ top: "large", left: "-1em" }}
     >
