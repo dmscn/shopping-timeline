@@ -48,11 +48,11 @@ export default class PurchaseList extends Component<Props> {
     return result;
   };
 
-  render() {
+  render(): Array<JSX.Element> {
     const { data } = this.props;
     const formatedData: Array<any> = this.formatData(data);
     return formatedData.map((purchase: any) => (
-      <PurchaseBox purchase={purchase} />
+      <PurchaseBox purchase={purchase} key={purchase.transaction_id} />
     ));
   }
 }

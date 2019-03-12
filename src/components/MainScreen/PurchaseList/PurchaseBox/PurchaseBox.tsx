@@ -4,7 +4,7 @@ import { Checkmark, Plan, Clock, Location, Money } from "grommet-icons";
 import moment from "moment";
 import "moment/min/locales";
 
-import ProductsList from "./ProductList";
+import ProductTable from "./ProductTable";
 import CheckmarkCircle from "./CheckmarkCircle";
 import BoxArrow from "./BoxArrow/BoxArrow";
 
@@ -17,6 +17,7 @@ export interface Props {
 export default function PurchaseBox(props: Props): JSX.Element {
   const { purchase } = props;
   const { products } = purchase;
+  console.log("Products", products);
   return (
     <Box
       width="30vw"
@@ -69,7 +70,7 @@ export default function PurchaseBox(props: Props): JSX.Element {
         </Box>
 
         {/* Products */}
-        <ProductsList products={products} />
+        <ProductTable products={products} />
       </Box>
     </Box>
   );
