@@ -4,7 +4,7 @@ import PurchaseBox from "../PurchaseBox";
 
 describe("<PurchaseBox />", () => {
   it("renders", () => {
-    const wrapper = shallow(<PurchaseBox />);
+    const wrapper = shallow(<PurchaseBox purchase={{ products: [] }} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

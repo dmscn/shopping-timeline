@@ -6,7 +6,9 @@ export interface Props {
 }
 
 export default function ProductList(props: Props): any {
-  const result: Array<JSX.Element> = props.products.map((product: any) => {
+  const { products } = props;
+
+  return products.map((product: any, index: number) => {
     const { value: productName } = product.custom_data.find(
       (item: any) => item.key === "product_name"
     );
@@ -14,12 +16,16 @@ export default function ProductList(props: Props): any {
       (item: any) => item.key === "product_price"
     );
 
+    const borderStyle =
+      index < products.length - 1
+        ? { borderBottom: "1px solid #cecece" }
+        : undefined;
+
     return (
-      <TableRow key={product.timestamp}>
+      <TableRow style={borderStyle} key={product.timestamp}>
         <TableCell scope="row">{productName}</TableCell>
-        <TableCell>{productPrice}</TableCell>
+        <TableCell>R$ {productPrice.toFixed(2)}</TableCell>
       </TableRow>
     );
   });
-  return result;
 }
