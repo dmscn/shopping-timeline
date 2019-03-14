@@ -8,13 +8,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn test --watchAll=false --bail"
+      "pre-push": "npm run test --watchAll=false --bail"
     }
   },
   "lint-staged": {
